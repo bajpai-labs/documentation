@@ -1,0 +1,7 @@
+# Cloudflare Pages — postquantumlabs.com documentation
+# Build: npm run build
+# Output: dist/ (root redirect + /docs/ VitePress site)
+
+name = "postquantumlabs-docs"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-09-24"

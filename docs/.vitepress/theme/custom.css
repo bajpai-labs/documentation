@@ -1,0 +1,363 @@
+/**
+ * VitePress shell + native documentation prose.
+ * Force light lab palette — no dark code/table surfaces.
+ */
+
+.bl-docs-layout {
+  color-scheme: light;
+  --vp-c-bg: var(--vellum);
+  --vp-c-bg-alt: var(--parchment);
+  --vp-c-bg-soft: var(--parchment);
+  --vp-c-bg-mute: var(--parchment-2);
+  --vp-c-text-1: var(--ink);
+  --vp-c-text-2: var(--charcoal);
+  --vp-c-text-3: #787065;
+  --vp-c-divider: rgb(184 134 11 / 0.2);
+  --vp-c-border: rgb(184 134 11 / 0.25);
+  --vp-code-bg: var(--parchment);
+  --vp-code-color: var(--charcoal-deep);
+}
+
+.bl-docs-layout .VPNav,
+.bl-docs-layout .VPFooter,
+.bl-docs-home .VPNav,
+.bl-docs-home .VPFooter {
+  display: none !important;
+}
+
+.bl-docs-layout,
+.bl-docs-home {
+  min-height: 100vh;
+}
+
+.bl-docs-layout .VPContent {
+  padding-top: 4rem !important;
+}
+
+.bl-docs-layout .VPDoc.has-sidebar {
+  padding: 0 !important;
+}
+
+.bl-docs-layout .VPDoc .container,
+.bl-docs-layout .VPDoc .content,
+.bl-docs-layout .VPDoc .content-container {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+/* Full-bleed section bands under hero */
+.bl-docs-layout--project .VPDoc .content {
+  background: var(--vellum);
+  border-top: none;
+}
+
+.bl-docs-layout .VPDoc .main {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 3rem;
+}
+
+.bl-docs-layout--project .vp-doc {
+  max-width: none;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+}
+
+.bl-docs-layout--project .vp-doc > h1:first-child {
+  display: none;
+}
+
+/* ── Section bands (alternating vellum / parchment) ── */
+.doc-section {
+  position: relative;
+  border-top: 1px solid rgb(184 134 11 / 0.14);
+  padding: 2.25rem 0 2.5rem;
+}
+
+.doc-section:first-child {
+  border-top: none;
+}
+
+.doc-section--vellum {
+  background: var(--vellum);
+}
+
+.doc-section--parchment {
+  background: var(--parchment);
+}
+
+.doc-section__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .doc-section {
+    padding: 2.75rem 0 3rem;
+  }
+
+  .doc-section__inner {
+    padding: 0 2rem;
+  }
+}
+
+.doc-section .section-grid-overlay {
+  opacity: 0.12;
+}
+
+/* Section headings inside bands */
+.bl-docs-layout--project .doc-section h2 {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+  padding-top: 0;
+  border-top: none;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--charcoal-deep);
+}
+
+.bl-docs-layout--project .doc-section h2:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.bl-docs-layout--project .vp-doc h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.bl-docs-layout--project .vp-doc p {
+  margin: 0.9rem 0;
+}
+
+.bl-docs-layout--project .vp-doc a {
+  color: var(--gold);
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.bl-docs-layout--project .vp-doc a:hover {
+  color: var(--gold-hover);
+}
+
+.bl-docs-layout--project .vp-doc strong {
+  color: var(--charcoal-deep);
+  font-weight: 600;
+}
+
+.bl-docs-layout--project .vp-doc ul,
+.bl-docs-layout--project .vp-doc ol {
+  margin: 0.85rem 0;
+  padding-left: 1.35rem;
+}
+
+.bl-docs-layout--project .vp-doc li {
+  margin: 0.35rem 0;
+}
+
+.bl-docs-layout--project .vp-doc li::marker {
+  color: rgb(184 134 11 / 0.75);
+}
+
+.bl-docs-layout--project .vp-doc hr {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgb(184 134 11 / 0.35), transparent);
+}
+
+/* ── Tables — always light parchment surfaces ── */
+.bl-docs-layout--project .vp-doc table {
+  display: table;
+  width: 100%;
+  margin: 1.25rem 0;
+  border-collapse: collapse;
+  border: 1px solid rgb(184 134 11 / 0.22);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--vellum) !important;
+  box-shadow: var(--card-shadow);
+  font-size: 0.9375rem;
+}
+
+.bl-docs-layout--project .vp-doc tr {
+  background-color: var(--vellum) !important;
+  border-top: 1px solid rgb(184 134 11 / 0.1) !important;
+}
+
+.bl-docs-layout--project .vp-doc tr:nth-child(2n) {
+  background-color: rgb(253 251 245 / 0.65) !important;
+}
+
+.bl-docs-layout--project .vp-doc th {
+  background-color: var(--parchment-2) !important;
+  color: var(--charcoal-deep) !important;
+  font-weight: 600;
+  text-align: left;
+}
+
+.bl-docs-layout--project .vp-doc td {
+  background-color: transparent !important;
+  color: var(--charcoal) !important;
+}
+
+.bl-docs-layout--project .vp-doc th,
+.bl-docs-layout--project .vp-doc td {
+  border: 1px solid rgb(184 134 11 / 0.12) !important;
+  padding: 0.65rem 0.85rem;
+}
+
+/* ── Code blocks — light parchment, not black terminal ── */
+.bl-docs-layout--project div[class*="language-"],
+.bl-docs-layout--project .vp-adaptive-theme,
+.bl-docs-layout--project pre[class*="language-"] {
+  margin: 1.1rem 0;
+  border: 1px solid rgb(184 134 11 / 0.22) !important;
+  border-radius: 0.5rem !important;
+  background: var(--parchment) !important;
+}
+
+.bl-docs-layout--project div[class*="language-"] pre,
+.bl-docs-layout--project pre.shiki {
+  margin: 0;
+  padding: 1rem 1.1rem !important;
+  background: transparent !important;
+  color: var(--ink) !important;
+}
+
+.bl-docs-layout--project .shiki {
+  background: transparent !important;
+}
+
+.bl-docs-layout--project div[class*="language-"] button.copy {
+  background: var(--vellum) !important;
+  border-color: rgb(184 134 11 / 0.25) !important;
+}
+
+.bl-docs-layout--project .vp-doc :not(pre) > code {
+  padding: 0.12rem 0.35rem;
+  border-radius: 0.25rem;
+  background: var(--parchment) !important;
+  border: 1px solid rgb(184 134 11 / 0.15);
+  font-size: 0.875em;
+  color: var(--charcoal-deep) !important;
+}
+
+/* Blockquote, details */
+.bl-docs-layout--project .vp-doc blockquote {
+  margin: 1.25rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: var(--vellum);
+  color: var(--charcoal);
+}
+
+.bl-docs-layout--project .vp-doc details {
+  margin: 1rem 0;
+  border: 1px solid rgb(184 134 11 / 0.2);
+  border-radius: 0.5rem;
+  background: var(--vellum);
+  overflow: hidden;
+}
+
+.bl-docs-layout--project .vp-doc summary {
+  cursor: pointer;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+  color: var(--charcoal-deep);
+  list-style: none;
+  background: var(--parchment);
+}
+
+.bl-docs-layout--project .vp-doc summary::-webkit-details-marker {
+  display: none;
+}
+
+.bl-docs-layout--project .vp-doc details[open] > :not(summary) {
+  padding: 0 1rem 1rem;
+}
+
+/* Mermaid diagrams — light lab surface */
+.bl-docs-layout--project .vp-doc .mermaid,
+.bl-docs-layout--project .vp-doc div.mermaid {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(184 134 11 / 0.22);
+  background: var(--vellum) !important;
+}
+
+.bl-docs-layout--project .vp-doc .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Sidebar */
+.bl-docs-layout .VPSidebar {
+  background: var(--parchment) !important;
+  border-right: 1px solid rgb(184 134 11 / 0.2) !important;
+  padding-top: 0.75rem !important;
+}
+
+.bl-docs-layout .VPSidebarItem.level-0 > .item > .text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--charcoal-deep);
+  font-size: 0.75rem;
+}
+
+.bl-docs-layout .VPSidebarItem .link {
+  font-size: 0.8125rem;
+  color: rgb(58 56 52 / 78%);
+}
+
+.bl-docs-layout .VPSidebarItem.is-active > .item .link,
+.bl-docs-layout .VPSidebarItem .link:hover {
+  color: var(--gold) !important;
+}
+
+/* Outline + footer */
+.bl-docs-layout .VPDocAside {
+  padding-top: 1.5rem;
+}
+
+.bl-docs-layout .VPDocAsideOutline .outline-link.active {
+  color: var(--gold);
+}
+
+.bl-docs-layout .VPDocFooter {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0;
+  border-top: 1px solid rgb(184 134 11 / 0.12);
+}
+
+.bl-docs-layout .VPDocFooter .pager-link {
+  border: 1px solid rgb(184 134 11 / 0.18);
+  border-radius: 0.5rem;
+  background: var(--parchment);
+}
+
+.VPLocalSearchBox {
+  border-color: rgb(184 134 11 / 0.3) !important;
+}
+
+/* Dark mode overrides if OS forces .dark on html */
+html.dark .bl-docs-layout--project .vp-doc table,
+html.dark .bl-docs-layout--project .vp-doc tr,
+html.dark .bl-docs-layout--project .vp-doc th,
+html.dark .bl-docs-layout--project .vp-doc td,
+html.dark .bl-docs-layout--project div[class*="language-"],
+html.dark .bl-docs-layout--project .vp-doc .mermaid {
+  background: var(--parchment) !important;
+  color: var(--charcoal) !important;
+}

@@ -51,9 +51,12 @@
 
 ## How docs are published
 
-| Source | Destination | Sync |
-|:-------|:------------|:-----|
-| [bajpai-labs/vortex-pqc](https://github.com/bajpai-labs/vortex-pqc) | `docs/vortex-pqc/` | Automatic on push via GitHub Actions |
+| Source | Destination | Live URL |
+|:-------|:------------|:---------|
+| [bajpai-labs/vortex-pqc](https://github.com/bajpai-labs/vortex-pqc) | `docs/vortex-pqc/` | [postquantumlabs.com/docs/vortex-pqc](https://postquantumlabs.com/docs/vortex-pqc/) |
+| [bajpai-labs/kyber-pqc](https://github.com/bajpai-labs/kyber-pqc) | `docs/kyber-pqc/` | [postquantumlabs.com/docs/kyber-pqc](https://postquantumlabs.com/docs/kyber-pqc/) |
+
+Synced automatically on push via GitHub Actions, then deployed to **postquantumlabs.com/docs**.
 
 <br/>
 
